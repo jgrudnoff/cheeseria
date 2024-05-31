@@ -1,0 +1,20 @@
+{
+  "name": "cheeseria.client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vite.config.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "James Grudnoff",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "prettier": "^2.7.1",
+    "vite": "^3.1.2",
+    "vite-svg-loader": "^3.6.0"
+  }
+}
