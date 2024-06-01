@@ -20,9 +20,9 @@ namespace CheeseApp.Server.Services
             return await _cheeseRepository.GetCheeses();
         }
 
-        public Task<CheeseDTO> InsertCheese(CheeseDTO student)
+        public Task<CheeseDTO> InsertCheese(CheeseDTO cheese)
         {
-            return _cheeseRepository.InsertCheese(student);
+            return _cheeseRepository.InsertCheese(cheese);
         }
 
         public void UpdateCheese(int cheeseId, CheeseDTO cheese)

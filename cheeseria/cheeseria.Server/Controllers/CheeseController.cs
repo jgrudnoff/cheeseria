@@ -75,6 +75,27 @@ namespace CheeseApp.Server.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<ActionResult<CheeseDTO>> PostCheese(CheeseDTO cheese)
+        {
+            try
+            {
+                var newItem = await _cheeseService.InsertCheese(cheese);
+                if (newItem == null)
+                {
+                    return BadRequest();
+                }
+                else
+                {
+                    return Ok(newItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCheese(int id)
         {

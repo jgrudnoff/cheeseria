@@ -19,7 +19,7 @@ namespace CheeseApp.Server.DataRepositories
             throw new NotImplementedException();
         }
 
-        public Task<CheeseDTO> InsertCheese(CheeseDTO student)
+        public Task<CheeseDTO> InsertCheese(CheeseDTO cheese)
         {
             throw new NotImplementedException();
         }
