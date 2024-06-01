@@ -16,10 +16,10 @@ namespace cheeseria.Server.DataRepositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var cheese1 = new CheeseDTO { Id = 1, Name = "Cheddar", Colour = "Light Yellow", PricePerKilo = 1 };
-            var cheese2 = new CheeseDTO { Id = 2, Name = "Feta", Colour = "White", PricePerKilo = 1 };
-            var cheese3 = new CheeseDTO { Id = 3, Name = "Gorgonzola", Colour = "White with Blue Pigment", PricePerKilo = 1 };
-            var cheese4 = new CheeseDTO { Id = 4, Name = "Gouda", Colour = "Light Yellow", PricePerKilo = 1 };
+            var cheese1 = new CheeseDTO { Id = 1, Name = "Cheddar", Colour = "Light Yellow", PricePerKilo = 7 };
+            var cheese2 = new CheeseDTO { Id = 2, Name = "Feta", Colour = "White", PricePerKilo = 50 };
+            var cheese3 = new CheeseDTO { Id = 3, Name = "Gorgonzola", Colour = "White with Blue Pigment", PricePerKilo = 21 };
+            var cheese4 = new CheeseDTO { Id = 4, Name = "Gouda", Colour = "Light Yellow", PricePerKilo = 3 };
             var cheese5 = new CheeseDTO { Id = 5, Name = "Aarenwasser", Colour = "White", PricePerKilo = 8 };
 
             modelBuilder.Entity<CheeseDTO>().HasData(cheese1, cheese2, cheese3, cheese4, cheese5);

@@ -1,11 +1,17 @@
+/* 
+	CSS Styling is very basic. Would have put more styling if time was allotted including @media reactivity but chose to focus on functional requirments
+*/
+
 :root {
-	--white: #f0f0f0;
+	--white: #FFFFFF;
+	--soft-white: #f0f0f0;
 	--black: #181818;
 	--light-grey: #ececec;
 }
   
 /* semantic color variables */
 :root {
+	--color-body-background: var(--soft-white);
 	--color-background: var(--white);
 	--color-text: var(--black);
 	--color-card: var(--light-grey);
@@ -14,7 +20,7 @@
 body {
 	min-height: 100vh;
 	color: var(--color-text);
-	background: var(--color-background);
+	background: var(--color-body-background);
 	transition: color 0.5s, background-color 0.5s;
 	line-height: 1.6;
 	color: black;
@@ -32,10 +38,14 @@ body {
 	max-width: 1280px;
 	margin: 0 auto;
 	padding: 2rem;
-
+	background: var(--color-background);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--color-background);
 	font-weight: normal;
 }
 
 .card{
 	background: var(--color-card);
 }
+
+
