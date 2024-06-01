@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace CheeseApp.Server.Contracts
+﻿namespace CheeseApp.Server.Contracts
 {
-    public interface ICheeseService
+    public interface ICheeseRepository
     {
         Task<IEnumerable<CheeseDTO>> GetCheeses();
         Task<CheeseDTO> GetCheeseById(int cheeseId);

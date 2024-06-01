@@ -1,24 +1,38 @@
 ﻿using CheeseApp.Server.Contracts;
-using Mine4DData.Contracts;
 
 namespace CheeseApp.Server.Services
 {
-    public class CheeseService : IProductService
+    public class CheeseService : ICheeseService
     {
-        IDataRepository _dataRepository;
-        public CheeseService(ILogger<CheeseService> logger, IDataRepository dataRepository )
+        ICheeseRepository _cheeseRepository;
+        public CheeseService(ILogger<CheeseService> logger, ICheeseRepository cheeseRepository )
         {
-            _dataRepository = dataRepository;
+            _cheeseRepository = cheeseRepository;
         }
 
-        IEnumerable<IProduct> IProductService.GetAllProducts()
+        public async Task<CheeseDTO> GetCheeseById(int cheeseId)
         {
-            return _dataRepository.GetCheese();
+            return await _cheeseRepository.GetCheeseById(cheeseId);
         }
 
-        IProduct IProductService.GetProduct(int id)
+        public async Task<IEnumerable<CheeseDTO>> GetCheeses()
         {
-            throw new NotImplementedException();
+            return await _cheeseRepository.GetCheeses();
+        }
+
+        public Task<CheeseDTO> InsertCheese(CheeseDTO student)
+        {
+            return _cheeseRepository.InsertCheese(student);
+        }
+
+        public void UpdateCheese(int cheeseId, CheeseDTO cheese)
+        {
+            _cheeseRepository.UpdateCheese(cheeseId, cheese);
+        }
+
+        public void DeleteCheese(int cheeseId)
+        {
+            _cheeseRepository.DeleteCheese(cheeseId);
         }
     }
 }
