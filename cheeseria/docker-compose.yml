@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+
+  cheeseria:
+    image: ${DOCKER_REGISTRY-}cheeseriaserver
+    build:
+      context: .
+      dockerfile: cheeseria.Server/Dockerfile
+    ports:
+      - 8080:8080
+      - 8081:8081
+    networks: 
+      - common-net
+
+  client:
+    build: 
+      context: cheeseria.client
+      dockerfile: Dockerfile
+    cpus: 2
+    ports:
+      - '5180:5180'
+    networks:
+      - common-net
+
+
+  db:
+    image: mcr.microsoft.com/mssql/server:latest
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+      SA_PASSWORD: MyPass@word
+    ports:
+      - 1433:1433
+    networks:
+      - common-net
+
+networks:
+  common-net: {}

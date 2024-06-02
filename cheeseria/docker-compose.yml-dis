@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  shop-db:
+    image: mysql:8.0.28
+    environment:
+      MYSQL_DATABASE: 'ShopDb'
+      MYSQL_ROOT_PASSWORD: 'DBPassword'
+    ports:
+      - '1433:1433'
+    expose:
+      - '1433'
+  app-dotnet:
+    build: 
+        context: ./cheeseria.Server
+    ports:
+      - "8080:8080"
+      - "8081:8081"

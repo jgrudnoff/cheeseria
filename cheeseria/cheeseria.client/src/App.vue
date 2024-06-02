@@ -29,13 +29,13 @@
         let response = await GetCheese()
         cheeseArray.value = response;
         for (let i = 0; i < response.length; i++) {
-          let imageUrl = `/img/${response[i].name}.jpg`
+          let imageUrl = `/img/${response[i].name.toLowerCase()}.jpg`
 
           //response[i].imageUrl = `/img/${response[i].name}.jpg`
           checkIfImageExists(imageUrl, (exists) => {
             if (exists) {
               console.log("exists")
-              cheeseArray.value[i].imageUrl = `/img/${response[i].name}.jpg`
+              cheeseArray.value[i].imageUrl = `/img/${response[i].name.toLowerCase()}.jpg`
             } else {
               cheeseArray.value[i].imageUrl = `/img/placeholder-cheese.svg`
             }
@@ -50,7 +50,7 @@
 <template>
   <div class="app-container">
     <div class="main-title-container">
-      <span class="main-title">Welcome to the Patient Zero Cheeseria!</span>
+      <span class="main-title">Welcome to the Cheeseria!</span>
 
     </div>
     <Cheeses :cheese-array="cheeseArray"/>

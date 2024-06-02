@@ -5,3 +5,7 @@
 /cheeseria/cheeseria.Server/bin
 /cheeseria/cheeseria.Server/obj
 cheeseria/cheeseria.client/package-lock.json
+/cheeseria/obj
+/cheeseria/bin
+cheeseria/cheeseria.client/package-lock.json
+/cheeseria/.cr
