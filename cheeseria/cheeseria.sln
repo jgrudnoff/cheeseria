@@ -9,6 +9,8 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cheeseria.client", "cheeser
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{D8DE1719-9758-42C2-A0D7-3DC632AE4A99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Test\Test.csproj", "{1FAE5C8D-8107-4034-A993-363584EFBBD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{D8DE1719-9758-42C2-A0D7-3DC632AE4A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8DE1719-9758-42C2-A0D7-3DC632AE4A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8DE1719-9758-42C2-A0D7-3DC632AE4A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FAE5C8D-8107-4034-A993-363584EFBBD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAE5C8D-8107-4034-A993-363584EFBBD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAE5C8D-8107-4034-A993-363584EFBBD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAE5C8D-8107-4034-A993-363584EFBBD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

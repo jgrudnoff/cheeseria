@@ -4,12 +4,10 @@ namespace CheeseApp.Server.Services
 {
     public class CheeseService : ICheeseService
     {
-        ILogger _logger;
 
         ICheeseRepository _cheeseRepository;
-        public CheeseService(ILogger<CheeseService> logger, ICheeseRepository cheeseRepository )
+        public CheeseService(ICheeseRepository cheeseRepository )
         {
-            _logger = logger;
             _cheeseRepository = cheeseRepository;
         }
 
