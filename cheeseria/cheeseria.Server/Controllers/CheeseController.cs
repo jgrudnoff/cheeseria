@@ -22,41 +22,18 @@ namespace CheeseApp.Server.Controllers
         [HttpGet(Name = "GetCheese")]
         public async Task<ActionResult<IEnumerable<CheeseDTO>>> Get()
         {
-            try
-            {
-                var items = await _cheeseService.GetCheeses();
-                if (items.Count() == 0)
-                {
-                    return NotFound();
-                }
-                else 
-                {
-                    return Ok(items);
-                }
-            }
-            catch (Exception ex)
-            {
-                return NotFound();
-            }
+            return Ok(await _cheeseService.GetCheeses());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CheeseDTO>> GetCheeseById(int id)
         {
-            try
-            {
-                var item = await _cheeseService.GetCheeseById(id);
-                if (item == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return Ok(item);
-                }
-            }
-            catch (Exception ex) 
+            var cheese = await _cheeseService.GetCheeseById(id);
+            if (cheese != null) 
             { 
+                return Ok(cheese); 
+            } else
+            {
                 return NotFound();
             }
         }
@@ -64,50 +41,29 @@ namespace CheeseApp.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCheese(int id, CheeseDTO cheese)
         {
-            try
-            {
-                _cheeseService.UpdateCheese(id, cheese);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest();
-            }
+            _cheeseService.UpdateCheese(id, cheese);
+            return Ok();
         }
 
         [HttpPost]
         public async Task<ActionResult<CheeseDTO>> PostCheese(CheeseDTO cheese)
         {
-            try
+            var newCheese = await _cheeseService.InsertCheese(cheese);
+            if (newCheese != null)
             {
-                var newItem = await _cheeseService.InsertCheese(cheese);
-                if (newItem == null)
-                {
-                    return BadRequest();
-                }
-                else
-                {
-                    return Ok(newItem);
-                }
+                return Ok(newCheese);
             }
-            catch (Exception ex)
+            else
             {
-                return BadRequest();
+                return NotFound();
             }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCheese(int id)
         {
-            try
-            {
-                _cheeseService.DeleteCheese(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return NotFound();
-            }
+            _cheeseService.DeleteCheese(id);
+            return NoContent();
         }
     }
 }
