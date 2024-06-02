@@ -10,5 +10,7 @@ namespace CheeseApp.Server
         public string? Name { get; set; }
         public float PricePerKilo { get; set; }
         public string? Colour { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }

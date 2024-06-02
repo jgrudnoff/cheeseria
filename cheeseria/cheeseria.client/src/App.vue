@@ -1,8 +1,7 @@
 <script setup>
     import Cheeses from "./components/Cheeses.vue";
     import PriceCalculator from "./components/PriceCalculator.vue";
-    import productService from "./services/product.service"
-    const ProductService = new productService();
+    import { GetCheese } from "./services/product.service"
     import { ref, onMounted } from 'vue'
 
     let cheeseArray = ref([])
@@ -27,7 +26,7 @@
 
     onMounted(async () => {
       try {
-        let response = await ProductService.GetCheese()
+        let response = await GetCheese()
         cheeseArray.value = response;
         for (let i = 0; i < response.length; i++) {
           let imageUrl = `/img/${response[i].name}.jpg`

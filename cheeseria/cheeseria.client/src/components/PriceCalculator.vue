@@ -1,14 +1,12 @@
 <script setup>
 import { computed, ref } from 'vue'
+import { CalculateCheesePrice } from "../services/product.service"
 const props = defineProps(['cheeseArray'])
 const totalPrice = computed(() => calculatePrice())
 
 function calculatePrice() {
-    if (selectedCheese.value.pricePerKilo)
-        return (ammountKg.value * selectedCheese.value.pricePerKilo)
-    return 0
+    return CalculateCheesePrice(selectedCheese.value.pricePerKilo, ammountKg.value)
 }
-
 
 let selectedCheese = ref({})
 let ammountKg = ref(0)

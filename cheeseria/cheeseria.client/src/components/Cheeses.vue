@@ -1,9 +1,5 @@
 <script setup>
 import CheeseCard from "./CheeseCard.vue";
-import { ref, onMounted } from 'vue'
-import productService from "../services/product.service"
-const ProductService = new productService();
-
 const props = defineProps(['cheeseArray'])
 
 </script>

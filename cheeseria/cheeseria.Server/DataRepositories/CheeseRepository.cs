@@ -28,6 +28,8 @@ namespace cheeseria.Server.DataRepositories
 
         public async Task<CheeseDTO> InsertCheese(CheeseDTO cheese)
         {
+            cheese.ModifiedDate = DateTime.Now;
+            cheese.CreatedDate = DateTime.Now;
             context.Cheeses.Add(cheese);
             await context.SaveChangesAsync();
             return cheese;
@@ -48,6 +50,8 @@ namespace cheeseria.Server.DataRepositories
                 entity.Name = cheese.Name;
                 entity.Colour = cheese.Colour;
                 entity.PricePerKilo = cheese.PricePerKilo;
+                entity.ModifiedDate = DateTime.Now;
+
                 context.SaveChangesAsync();
             }
         }
